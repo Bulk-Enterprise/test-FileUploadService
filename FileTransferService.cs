@@ -41,16 +41,14 @@ namespace AzureFileTransferService
                         var filePath = reader.GetString(1);
                         var fileName = reader.GetString(2);
 
-                        bool downloadSuccessful = await DownloadFileFromBlobAsync(filePath, fileName);
+                        bool downloadSuccessful = await DownloadFileFromBlobAsync(filePath, fileName);                        
 
                         if (downloadSuccessful)
                         {
                             await UpdateProcessedStatusAsync(transferId);
                         }
-                        else
-                        {
-                            await UpdateSendTriesAsync(transferId);
-                        }
+
+                        await UpdateSendTriesAsync(transferId);
                     }
                 }
             }
