@@ -14,7 +14,7 @@ namespace AzureFileTransferService
         private readonly ILogger<FileTransferService> _logger = logger;
 
         private readonly string _sqlConnectionString = "Server=tcp:sql-fileupload-cus.database.windows.net,1433;Initial Catalog=sqldb-fileupload-dev;Persist Security Info=False;User ID=svcdAzureFileAPI@nationaldentex.com;Password={EnterPassword};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Authentication=Active Directory Password";
-        private readonly string _blobStorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=stfileupload555dev;AccountKey=K/xV2oPkdRq1BoC2qplYTeZ0NWesDoWluRNSwyesvFp4OcvD0SjJdDBV3nPkrdWPzxoYyQ5n1Vap+ASt3IxMqg==;EndpointSuffix=core.windows.net";
+        private readonly string _blobStorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=stfileupload555dev;AccountKey={EnterAccountKey};EndpointSuffix=core.windows.net";
         private readonly string _localFolderPath = @"\\10.11.1.134\MNFLH_WebUpload$\iTero";
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
